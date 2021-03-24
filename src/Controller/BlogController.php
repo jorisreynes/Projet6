@@ -11,6 +11,7 @@ use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class BlogController extends AbstractController
 {
@@ -44,22 +45,28 @@ class BlogController extends AbstractController
         $article = new Article();
 
         $form = $this->createFormBuilder($article)
-                    ->add('title', TextType::class, [
-                        'attr' => [
-                            'placeholder' => "Titre de l'article"
-                        ]
-                    ])
-                    ->add('content', TextareaType::class, [
-                        'attr' => [
-                            'placeholder' => "Contenu de l'article"
-                        ]
-                    ])
-                    ->add('image', TextType::class, [
-                        'attr' => [
-                            'placeholder' => "Image de l'article"
-                        ]
-                    ])
+                    ->add('title')
+                    ->add('content')
+                    ->add('image')
+                    ->add('video')
+                    ->add('createdBy')
+
                     ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+
+            $article->setCreatedAt(new \Datetime());
+
+            $manager->persist($article);
+            $manager->flush();
+
+            return $this->redirectToRoute('blog_show', ['id' => $article->getId()]);
+        }
+
+
+
 
         return $this->render('blog/create.html.twig', [
             'formArticle' => $form->createView()
@@ -73,7 +80,7 @@ class BlogController extends AbstractController
      */
     public function show(Article $article){
 
-        $article = $repo->find($id);
+        //$article = $repo->find($id);
 
         return $this->render('blog/show.html.twig', [
 

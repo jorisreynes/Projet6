@@ -1,9 +1,27 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
+
 {% block body %}
 
-<h1>Test</h1>
+<h1>Création d'un article</h1>
 
-{{ form(formArticle) }}
+
+
+{{ form_start(formArticle) }}
+
+
+{{ form_row(formArticle.title, {'attr': {'placeholer': "Titre de l'article"} } ) }}
+{{ form_row(formArticle.content, {'attr': {'placeholer': "Contenu de l'article"} } ) }}
+{{ form_row(formArticle.image, {'attr': {'placeholer': "Image de l'article"} } ) }}
+{{ form_row(formArticle.video, {'attr': {'placeholer': "Video de l'article"} } ) }}
+{{ form_row(formArticle.createdBy, {'attr': {'placeholer': "Autheur de l'article"} } ) }}
+
+
+
+<button type="submit" class="btn btn-success">Ajouter l'article</button>
+
+
+{{ form_end(formArticle) }}
 
 {% endblock %}
