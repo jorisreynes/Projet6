@@ -76,22 +76,53 @@ class __TwigTemplate_e1fcdc70c8111876aa47d4d8dcf3c531b1473425184833d54e94adc898d
             <!--li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/blog\">Tricks</a>
             </li-->
+            
+
+            ";
+        // line 31
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) {
+            // line 32
+            echo "
+            
+
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+            // line 36
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
+            echo "\">Connexion</a>
+            </li>
+
+            ";
+        } else {
+            // line 40
+            echo "
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 30
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_create");
-        echo "\">Créer un trick</a>
+            // line 42
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_create");
+            echo "\">Créer un trick</a>
             </li>
-         
+
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+            // line 46
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
+            echo "\">Déconnexion</a>
+            </li>
+
+            ";
+        }
+        // line 50
+        echo "
             </ul>
           
         </div>
     </nav>
     <div class=\"container\">
       ";
-        // line 38
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 39
+        // line 57
         echo "    </div>
       
     </body>
@@ -168,7 +199,7 @@ class __TwigTemplate_e1fcdc70c8111876aa47d4d8dcf3c531b1473425184833d54e94adc898d
 
     }
 
-    // line 38
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -198,7 +229,7 @@ class __TwigTemplate_e1fcdc70c8111876aa47d4d8dcf3c531b1473425184833d54e94adc898d
 
     public function getDebugInfo()
     {
-        return array (  172 => 38,  162 => 15,  160 => 14,  150 => 13,  140 => 11,  138 => 10,  128 => 9,  109 => 5,  95 => 39,  93 => 38,  82 => 30,  66 => 16,  64 => 13,  61 => 12,  58 => 9,  53 => 5,  47 => 1,);
+        return array (  203 => 56,  193 => 15,  191 => 14,  181 => 13,  171 => 11,  169 => 10,  159 => 9,  140 => 5,  126 => 57,  124 => 56,  116 => 50,  109 => 46,  102 => 42,  98 => 40,  91 => 36,  85 => 32,  83 => 31,  66 => 16,  64 => 13,  61 => 12,  58 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -231,10 +262,28 @@ class __TwigTemplate_e1fcdc70c8111876aa47d4d8dcf3c531b1473425184833d54e94adc898d
             <!--li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"/blog\">Tricks</a>
             </li-->
+            
+
+            {% if not app.user %}
+
+            
+
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"{{ path('security_login') }}\">Connexion</a>
+            </li>
+
+            {% else %}
+
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('blog_create') }}\">Créer un trick</a>
             </li>
-         
+
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"{{ path('security_logout') }}\">Déconnexion</a>
+            </li>
+
+            {% endif %}
+
             </ul>
           
         </div>

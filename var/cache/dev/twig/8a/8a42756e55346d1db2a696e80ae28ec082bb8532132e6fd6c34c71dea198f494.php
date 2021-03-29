@@ -76,6 +76,8 @@ class __TwigTemplate_5d0eb51aa385cd067e2e49986c02608b0b63be75638bea3a8b2c997065d
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "createdAt", [], "any", false, false, false, 7), "d/m/Y"), "html", null, true);
         echo " à ";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "createdAt", [], "any", false, false, false, 7), "H:i"), "html", null, true);
+        echo " dans la catégorie ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "category", [], "any", false, false, false, 7), "title", [], "any", false, false, false, 7), "html", null, true);
         echo "</div>
         <div class=\"content\">
             <img src=\"";
@@ -88,6 +90,85 @@ class __TwigTemplate_5d0eb51aa385cd067e2e49986c02608b0b63be75638bea3a8b2c997065d
         echo "</p>
         </div>
     </article>
+
+    <section id=\"commentaires\">
+
+        <h1>";
+        // line 16
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 16, $this->source); })()), "comments", [], "any", false, false, false, 16)), "html", null, true);
+        echo " commentaires :</h1>
+
+        ";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 18, $this->source); })()), "comments", [], "any", false, false, false, 18));
+        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+            // line 19
+            echo "
+        <div class=\"comment\">
+            <div class=\"row\">
+                <div class=\"col-3\">
+                    ";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "author", [], "any", false, false, false, 23), "html", null, true);
+            echo " (<small>";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 23), "d/m/Y à H:i"), "html", null, true);
+            echo " </small>)
+                </div>
+                <div class=\"col\">
+                    ";
+            // line 26
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "content", [], "any", false, false, false, 26);
+            echo "
+                </div>
+            </div>
+        </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 31
+        echo "
+        ";
+        // line 32
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32)) {
+            // line 33
+            echo "
+        ";
+            // line 34
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["commentForm"]) || array_key_exists("commentForm", $context) ? $context["commentForm"] : (function () { throw new RuntimeError('Variable "commentForm" does not exist.', 34, $this->source); })()), 'form_start');
+            echo "
+        ";
+            // line 35
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["commentForm"]) || array_key_exists("commentForm", $context) ? $context["commentForm"] : (function () { throw new RuntimeError('Variable "commentForm" does not exist.', 35, $this->source); })()), "author", [], "any", false, false, false, 35), 'row', ["attr" => ["placeholder" => "Votre nom"]]);
+            echo "
+        ";
+            // line 36
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["commentForm"]) || array_key_exists("commentForm", $context) ? $context["commentForm"] : (function () { throw new RuntimeError('Variable "commentForm" does not exist.', 36, $this->source); })()), "content", [], "any", false, false, false, 36), 'row', ["attr" => ["placeholder" => "Votre commentaire"]]);
+            echo "
+
+        <button type=\"submit\" class=\"btn btn-success\">Commenter</button>
+
+        ";
+            // line 40
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["commentForm"]) || array_key_exists("commentForm", $context) ? $context["commentForm"] : (function () { throw new RuntimeError('Variable "commentForm" does not exist.', 40, $this->source); })()), 'form_end');
+            echo "
+
+        ";
+        } else {
+            // line 43
+            echo "
+            <h2>Vous ne pouvez pas commenter si vous n'etes pas connecté</h2>
+            <a href=\"";
+            // line 45
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
+            echo "\" class=\"btn btn-primary\">Connexion</a>
+        ";
+        }
+        // line 47
+        echo "
+    </section>
 
 
 ";
@@ -111,7 +192,7 @@ class __TwigTemplate_5d0eb51aa385cd067e2e49986c02608b0b63be75638bea3a8b2c997065d
 
     public function getDebugInfo()
     {
-        return array (  87 => 10,  83 => 9,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  170 => 47,  165 => 45,  161 => 43,  155 => 40,  148 => 36,  144 => 35,  140 => 34,  137 => 33,  135 => 32,  132 => 31,  121 => 26,  113 => 23,  107 => 19,  103 => 18,  98 => 16,  89 => 10,  85 => 9,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -122,12 +203,48 @@ class __TwigTemplate_5d0eb51aa385cd067e2e49986c02608b0b63be75638bea3a8b2c997065d
 
    <article>
         <h2>{{ article.title }}</h2>
-        <div class=\"metadata\">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}}</div>
+        <div class=\"metadata\">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}} dans la catégorie {{ article.category.title }}</div>
         <div class=\"content\">
             <img src=\"{{ article.image }}\" alt=\"\">
             <p>{{ article.content }}</p>
         </div>
     </article>
+
+    <section id=\"commentaires\">
+
+        <h1>{{ article.comments | length }} commentaires :</h1>
+
+        {% for comment in article.comments %}
+
+        <div class=\"comment\">
+            <div class=\"row\">
+                <div class=\"col-3\">
+                    {{ comment.author }} (<small>{{ comment.createdAt | date('d/m/Y à H:i') }} </small>)
+                </div>
+                <div class=\"col\">
+                    {{ comment.content | raw }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if app.user %}
+
+        {{ form_start(commentForm) }}
+        {{ form_row(commentForm.author, {'attr': {'placeholder' : \"Votre nom\"}})}}
+        {{ form_row(commentForm.content, {'attr': {'placeholder': \"Votre commentaire\"}})}}
+
+        <button type=\"submit\" class=\"btn btn-success\">Commenter</button>
+
+        {{ form_end(commentForm)}}
+
+        {% else %}
+
+            <h2>Vous ne pouvez pas commenter si vous n'etes pas connecté</h2>
+            <a href=\"{{path('security_login')}}\" class=\"btn btn-primary\">Connexion</a>
+        {% endif %}
+
+    </section>
 
 
 {% endblock %}", "blog/show.html.twig", "/Users/joris/Desktop/Openclassroom/Projet 6/projet6/templates/blog/show.html.twig");

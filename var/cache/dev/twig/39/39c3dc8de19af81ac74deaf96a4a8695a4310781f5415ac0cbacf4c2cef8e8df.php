@@ -69,45 +69,81 @@ class __TwigTemplate_30bd492f962fcf243c610241abfb77b95bcd62a93893f94e8b714b57c41
 
         // line 6
         echo "
-<h1>Création d'un article</h1>
-
-
+";
+        // line 7
+        if ((isset($context["editMode"]) || array_key_exists("editMode", $context) ? $context["editMode"] : (function () { throw new RuntimeError('Variable "editMode" does not exist.', 7, $this->source); })())) {
+            // line 8
+            echo "
+    <h1>Modification d'un trick</h1>
 
 ";
-        // line 11
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 11, $this->source); })()), 'form_start');
-        echo "
+        } else {
+            // line 11
+            echo " 
 
+    <h1>Création d'un trick</h1>
 
 ";
-        // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 14, $this->source); })()), "title", [], "any", false, false, false, 14), 'row', ["attr" => ["placeholer" => "Titre de l'article"]]);
-        echo "
-";
-        // line 15
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 15, $this->source); })()), "content", [], "any", false, false, false, 15), 'row', ["attr" => ["placeholer" => "Contenu de l'article"]]);
-        echo "
-";
+        }
         // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 16, $this->source); })()), "image", [], "any", false, false, false, 16), 'row', ["attr" => ["placeholer" => "Image de l'article"]]);
         echo "
-";
-        // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 17, $this->source); })()), "video", [], "any", false, false, false, 17), 'row', ["attr" => ["placeholer" => "Video de l'article"]]);
-        echo "
+
 ";
         // line 18
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 18, $this->source); })()), "createdBy", [], "any", false, false, false, 18), 'row', ["attr" => ["placeholer" => "Autheur de l'article"]]);
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 18, $this->source); })()), 'form_start');
+        echo "
+
+
+";
+        // line 21
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 21, $this->source); })()), "title", [], "any", false, false, false, 21), 'row', ["attr" => ["placeholer" => "Titre de l'article"]]);
+        echo "
+";
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 22, $this->source); })()), "category", [], "any", false, false, false, 22), 'row');
+        echo "
+";
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 23, $this->source); })()), "content", [], "any", false, false, false, 23), 'row', ["attr" => ["placeholer" => "Contenu de l'article"]]);
+        echo "
+";
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 24, $this->source); })()), "image", [], "any", false, false, false, 24), 'row', ["attr" => ["placeholer" => "Image de l'article"]]);
+        echo "
+";
+        // line 25
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 25, $this->source); })()), "video", [], "any", false, false, false, 25), 'row', ["attr" => ["placeholer" => "Video de l'article"]]);
+        echo "
+";
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 26, $this->source); })()), "createdBy", [], "any", false, false, false, 26), 'row', ["attr" => ["placeholer" => "Autheur de l'article"]]);
         echo "
 
 
 
-<button type=\"submit\" class=\"btn btn-success\">Ajouter l'article</button>
-
+<button type=\"submit\" class=\"btn btn-success\">
 
 ";
-        // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 25, $this->source); })()), 'form_end');
+        // line 32
+        if ((isset($context["editMode"]) || array_key_exists("editMode", $context) ? $context["editMode"] : (function () { throw new RuntimeError('Variable "editMode" does not exist.', 32, $this->source); })())) {
+            // line 33
+            echo "
+    Enregistrer
+
+";
+        } else {
+            // line 36
+            echo "    
+
+    Ajouter l'article</button>
+
+";
+        }
+        // line 41
+        echo "
+";
+        // line 42
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formArticle"]) || array_key_exists("formArticle", $context) ? $context["formArticle"] : (function () { throw new RuntimeError('Variable "formArticle" does not exist.', 42, $this->source); })()), 'form_end');
         echo "
 
 ";
@@ -131,7 +167,7 @@ class __TwigTemplate_30bd492f962fcf243c610241abfb77b95bcd62a93893f94e8b714b57c41
 
     public function getDebugInfo()
     {
-        return array (  110 => 25,  100 => 18,  96 => 17,  92 => 16,  88 => 15,  84 => 14,  78 => 11,  71 => 6,  61 => 5,  50 => 1,  48 => 3,  35 => 1,);
+        return array (  146 => 42,  143 => 41,  136 => 36,  130 => 33,  128 => 32,  119 => 26,  115 => 25,  111 => 24,  107 => 23,  103 => 22,  99 => 21,  93 => 18,  89 => 16,  82 => 11,  76 => 8,  74 => 7,  71 => 6,  61 => 5,  50 => 1,  48 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -142,14 +178,22 @@ class __TwigTemplate_30bd492f962fcf243c610241abfb77b95bcd62a93893f94e8b714b57c41
 
 {% block body %}
 
-<h1>Création d'un article</h1>
+{% if editMode %}
 
+    <h1>Modification d'un trick</h1>
+
+{% else %} 
+
+    <h1>Création d'un trick</h1>
+
+{% endif %}
 
 
 {{ form_start(formArticle) }}
 
 
 {{ form_row(formArticle.title, {'attr': {'placeholer': \"Titre de l'article\"} } ) }}
+{{ form_row(formArticle.category) }}
 {{ form_row(formArticle.content, {'attr': {'placeholer': \"Contenu de l'article\"} } ) }}
 {{ form_row(formArticle.image, {'attr': {'placeholer': \"Image de l'article\"} } ) }}
 {{ form_row(formArticle.video, {'attr': {'placeholer': \"Video de l'article\"} } ) }}
@@ -157,8 +201,17 @@ class __TwigTemplate_30bd492f962fcf243c610241abfb77b95bcd62a93893f94e8b714b57c41
 
 
 
-<button type=\"submit\" class=\"btn btn-success\">Ajouter l'article</button>
+<button type=\"submit\" class=\"btn btn-success\">
 
+{% if editMode %}
+
+    Enregistrer
+
+{% else %}    
+
+    Ajouter l'article</button>
+
+{% endif %}
 
 {{ form_end(formArticle) }}
 

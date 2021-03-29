@@ -4,14 +4,22 @@
 
 {% block body %}
 
-<h1>Création d'un article</h1>
+{% if editMode %}
 
+    <h1>Modification d'un trick</h1>
+
+{% else %} 
+
+    <h1>Création d'un trick</h1>
+
+{% endif %}
 
 
 {{ form_start(formArticle) }}
 
 
 {{ form_row(formArticle.title, {'attr': {'placeholer': "Titre de l'article"} } ) }}
+{{ form_row(formArticle.category) }}
 {{ form_row(formArticle.content, {'attr': {'placeholer': "Contenu de l'article"} } ) }}
 {{ form_row(formArticle.image, {'attr': {'placeholer': "Image de l'article"} } ) }}
 {{ form_row(formArticle.video, {'attr': {'placeholer': "Video de l'article"} } ) }}
@@ -19,8 +27,17 @@
 
 
 
-<button type="submit" class="btn btn-success">Ajouter l'article</button>
+<button type="submit" class="btn btn-success">
 
+{% if editMode %}
+
+    Enregistrer
+
+{% else %}    
+
+    Ajouter l'article</button>
+
+{% endif %}
 
 {{ form_end(formArticle) }}
 
