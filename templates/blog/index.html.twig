@@ -21,25 +21,42 @@
 
 
 <section class="articles">
+  <div class="container">
+    <div class="row">
+      {% for article in articles %}
+
+  
+      <!--div class="col-lg-2"-->
+        <div class="col-2_4">
+        
+
+            <h2>{{ article.title }}</h2>
+            
+            {% if app.user %}
+            
+            <a href="{{ path('blog_edit', {'id': article.id}) }}"><img src="icone_modif_2.png"  alt=""></a>
+            <a href="{{ path('blog_delete', {'id': article.id}) }}"><img src="icone_suppr_2.png"  alt=""></a>
+            {% endif %}
+
+              <img src="{{ article.image }}" alt="" style="width:100%; height:auto">
 
 
-
-{% for article in articles %}
-
-    <article>
-        <h2>{{ article.title }}</h2>
-        <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}}</div>
-        <div class="content">
-            <img src="{{ article.image }}" alt="">
-            <p>{{ article.content }}</p>
-            <a href=" {{ path('blog_show', {'id': article.id}) }} " class="btn btn-primary">Lire la suite</a>
+              <p>{{ article.content |slice(0,55)}}...</p>
+              <a href=" {{ path('blog_show', {'id': article.id}) }} " class="btn btn-primary">Lire la suite</a>
+              <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}}</div>
         </div>
-    </article>
 
-{% endfor %}
-
-
+      
     
+
+
+
+
+
+
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
 {% endblock %}
