@@ -4,6 +4,8 @@
 
 {% block body %}
 
+<div class="container">
+
 {% if editMode %}
 
     <h1>Modification d'un trick</h1>
@@ -40,5 +42,7 @@
 {% endif %}
 
 {{ form_end(formArticle) }}
+
+</div>
 
 {% endblock %}

@@ -2,6 +2,8 @@
 
 {% block body %}
 
+<div class="container">
+
      <h1>Connexion</h1>
 
      <form action="{{ path('security_login') }}" method="post">
@@ -16,5 +18,7 @@
             <button type="submit" class="btn btn-success">Connexion</button>
         </div>
      </form>
+
+</div>
 
 {% endblock %}

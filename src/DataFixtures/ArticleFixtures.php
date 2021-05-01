@@ -70,8 +70,6 @@ class ArticleFixtures extends Fixture
             }
         }
 
-     
-       
 
         $manager->flush();
     }

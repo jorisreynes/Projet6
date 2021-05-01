@@ -135,29 +135,31 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
                 // line 38
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 38)]), "html", null, true);
                 echo "\"><img src=\"icone_suppr_2.png\"  alt=\"\"></a>
+
+
             ";
             }
-            // line 40
+            // line 42
             echo "
               <img src=\"";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 41), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 43), "html", null, true);
             echo "\" alt=\"\" style=\"width:100%; height:auto\">
 
 
               <p>";
-            // line 44
-            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 44), 0, 55), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 46), 0, 55), "html", null, true);
             echo "...</p>
               <a href=\" ";
-            // line 45
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 47)]), "html", null, true);
             echo " \" class=\"btn btn-primary\">Lire la suite</a>
               <div class=\"metadata\">Ecrit le ";
-            // line 46
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 46), "d/m/Y"), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 48), "d/m/Y"), "html", null, true);
             echo " à ";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 46), "H:i"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 48), "H:i"), "html", null, true);
             echo "</div>
         </div>
 
@@ -174,7 +176,7 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 58
+        // line 60
         echo "    </div>
   </div>
 </section>
@@ -200,7 +202,7 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
 
     public function getDebugInfo()
     {
-        return array (  178 => 58,  158 => 46,  154 => 45,  150 => 44,  144 => 41,  141 => 40,  136 => 38,  132 => 37,  129 => 36,  127 => 35,  122 => 33,  114 => 27,  110 => 26,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  180 => 60,  160 => 48,  156 => 47,  152 => 46,  146 => 43,  143 => 42,  136 => 38,  132 => 37,  129 => 36,  127 => 35,  122 => 33,  114 => 27,  110 => 26,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -243,6 +245,8 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
             
             <a href=\"{{ path('blog_edit', {'id': article.id}) }}\"><img src=\"icone_modif_2.png\"  alt=\"\"></a>
             <a href=\"{{ path('blog_delete', {'id': article.id}) }}\"><img src=\"icone_suppr_2.png\"  alt=\"\"></a>
+
+
             {% endif %}
 
               <img src=\"{{ article.image }}\" alt=\"\" style=\"width:100%; height:auto\">

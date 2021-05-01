@@ -66,10 +66,12 @@ class __TwigTemplate_3ce175a732c6bf8c39f789f5191eec598db6462420dcae60877ce32c425
 
         // line 4
         echo "
+<div class=\"container\">
+
      <h1>Connexion</h1>
 
      <form action=\"";
-        // line 7
+        // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
         echo "\" method=\"post\">
         <div class=\"form-group\">
@@ -83,6 +85,8 @@ class __TwigTemplate_3ce175a732c6bf8c39f789f5191eec598db6462420dcae60877ce32c425
             <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
         </div>
      </form>
+
+</div>
 
 ";
         
@@ -105,7 +109,7 @@ class __TwigTemplate_3ce175a732c6bf8c39f789f5191eec598db6462420dcae60877ce32c425
 
     public function getDebugInfo()
     {
-        return array (  73 => 7,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  75 => 9,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -113,6 +117,8 @@ class __TwigTemplate_3ce175a732c6bf8c39f789f5191eec598db6462420dcae60877ce32c425
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+
+<div class=\"container\">
 
      <h1>Connexion</h1>
 
@@ -128,6 +134,8 @@ class __TwigTemplate_3ce175a732c6bf8c39f789f5191eec598db6462420dcae60877ce32c425
             <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
         </div>
      </form>
+
+</div>
 
 {% endblock %}", "security/login.html.twig", "/Users/joris/Desktop/Openclassroom/Projet 6/projet6/templates/security/login.html.twig");
     }

@@ -6,8 +6,10 @@ use App\Entity\Article;
 use App\Entity\Comment;
 use App\Form\ArticleType;
 use App\Form\CommentType;
+use App\Repository\PhotosRepository;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,11 +43,10 @@ class BlogController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * 
      * @Route("/blog/new", name="blog_create")
      * @Route("/blog/{id}/edit", name="blog_edit")
-
      */
 
     public function form (Article $article = null, request $request, EntityManagerInterface  $manager){
@@ -73,9 +74,9 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog/{id}", name="blog_show")
      */
-    public function show(Article $article, Request $request, EntityManagerInterface  $manager){
+    public function show(Article $article, Request $request, EntityManagerInterface $manager, PhotosRepository $repophotos, PaginatorInterface $paginator){
 
-        $comment = new Comment(); 
+        $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
             if($form->isSubmitted() && $form->isValid()){
@@ -85,10 +86,24 @@ class BlogController extends AbstractController
                     $manager->flush();
                     return $this->redirectToRoute('blog_show', ['id' => $article->getId()]);
             }
+
+            $donnees = $this->getDoctrine()->getRepository(Comment::class)->findAll();
+            $comments = $paginator->paginate(
+                $donnees, // Requête contenant les données à paginer (ici nos articles)
+                $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+                6 // Nombre de résultats par page
+            );
+    
+            
         return $this->render('blog/show.html.twig', [
             'article' => $article,
+            'comment' => $comments,
             'commentForm' => $form->createView()
         ]);
+
+       
+
+       
     }
 
 
@@ -103,5 +118,22 @@ class BlogController extends AbstractController
         $em->flush();
         return $this->redirectToRoute("blog");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

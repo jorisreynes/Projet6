@@ -3,13 +3,18 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @UniqueEntity(
+ * fields= {"title"},
+ * message= "La figure que vous voulez créer existe déjà")
  */
 class Article
 {
@@ -64,9 +69,20 @@ class Article
      */
     private $comments;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Photos::class, mappedBy="Article")
+     */
+    private $url;
+
+
+
+
+
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->url = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -182,6 +198,36 @@ class Article
             // set the owning side to null (unless already changed)
             if ($comment->getArticle() === $this) {
                 $comment->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Photos[]
+     */
+    public function getUrl(): Collection
+    {
+        return $this->url;
+    }
+
+    public function addUrl(Photos $url): self
+    {
+        if (!$this->url->contains($url)) {
+            $this->url[] = $url;
+            $url->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUrl(Photos $url): self
+    {
+        if ($this->url->removeElement($url)) {
+            // set the owning side to null (unless already changed)
+            if ($url->getArticle() === $this) {
+                $url->setArticle(null);
             }
         }
 

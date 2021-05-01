@@ -2,28 +2,94 @@
 
 {% block body %}
 
+<div class="container">
+
+
+
    <article>
         <h2>{{ article.title }}</h2>
-        <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}} dans la catégorie {{ article.category.title }}</div>
+        <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}} par {{ article.createdBy }} dans la catégorie {{ article.category.title }}</div>
         <div class="content">
             <img src="{{ article.image }}" alt="">
             <p>{{ article.content }}</p>
         </div>
     </article>
 
+
+    <!--section class="photos">
+        <div class="container">
+            <div class="row">
+                {#% for photos in photoss %}
+                    <div class="col-2_4">
+                        <img src="{{ article.photos.url }}" alt="" style="width:100%; height:auto">
+                    </div>
+                {% endfor %#}
+            </div>
+        </div>
+    </section-->
+
+
+
+
+
+
+
+
     <section id="commentaires">
 
         <h1>{{ article.comments | length }} commentaires :</h1>
 
+
+
+
+<!-- Nouvelle partie ajoutée pour la pagination des commentaires -->
+        <div class="count">
+    {{ comment.getTotalItemCount }}
+</div>
+<table>
+    <tr>
+        {# sorting of properties based on query components #}
+        <th>{{ knp_pagination_sortable(comment, 'Id', 'a.id') }}</th>
+        <th{% if comment.isSorted('a.Title') %} class="sorted"{% endif %}>
+            {{ knp_pagination_sortable(comment, 'Title', 'a.title') }}
+        </th>
+        <th{% if comment.isSorted(['a.date', 'a.time']) %} class="sorted"{% endif %}>
+            {{ knp_pagination_sortable(comment, 'Release', ['a.date', 'a.time']) }}
+        </th>
+    </tr>
+    {# table body #}
+    {% for com in comment %}
+        <tr {% if loop.index is odd %}class="color"{% endif %}>
+        
+            <td>{{ com.id }}</td>
+            <td>{{ com.content }}</td>
+            <td>{{ com.createdAt | date('d/m/Y à H:i') }} </td>
+        </tr>
+    {% endfor %}
+</table>
+{# display navigation #}
+<div class="navigation">
+    {{ knp_pagination_render(comment) }}
+</div>
+
+
+
+
+
         {% for comment in article.comments %}
 
-        <div class="comment">
+        <br><div class="comment">
             <div class="row">
-                <div class="col-3">
-                    {{ comment.author }} (<small>{{ comment.createdAt | date('d/m/Y à H:i') }} </small>)
+                <div class="col-4"> 
+                    <img src="{{ comment.user.image }}" alt="" style="width:50px; height:auto">
+      
+                        {{ comment.user.username }} (<small>{{ comment.createdAt | date('d/m/Y à H:i') }} </small>)
+                                      <a href=""><img src="/icone_modif_2.png"  alt="" style="width:30px; height:auto"></a>
+                                      <a href=""><img src="/icone_suppr_2.png"  alt="" style="width:30px; height:auto"></a>
                 </div>
-                <div class="col">
+                <div class="col-8">
                     {{ comment.content | raw }}
+                    
                 </div>
             </div>
         </div>
@@ -32,7 +98,7 @@
         {% if app.user %}
 
         {{ form_start(commentForm) }}
-        {{ form_row(commentForm.author, {'attr': {'placeholder' : "Votre nom"}})}}
+        {{ form_row(commentForm.user ) }}
         {{ form_row(commentForm.content, {'attr': {'placeholder': "Votre commentaire"}})}}
 
         <button type="submit" class="btn btn-success">Commenter</button>
@@ -46,6 +112,20 @@
         {% endif %}
 
     </section>
+
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 {% endblock %}

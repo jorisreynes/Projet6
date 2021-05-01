@@ -69,7 +69,7 @@ class __TwigTemplate_81017c5745a9b14316efcddd25492cb33b204263d109294979b303427a2
         echo "    </head>
     <body>
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-        <a class=\"navbar-brand\" href=\"/\">Blog Snowboard</a>
+        <a class=\"navbar-brand\" href=\"/\">Snowtricks</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
@@ -242,7 +242,7 @@ class __TwigTemplate_81017c5745a9b14316efcddd25492cb33b204263d109294979b303427a2
     </head>
     <body>
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-        <a class=\"navbar-brand\" href=\"/\">Blog Snowboard</a>
+        <a class=\"navbar-brand\" href=\"/\">Snowtricks</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
