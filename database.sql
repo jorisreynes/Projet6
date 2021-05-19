@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mer. 31 mars 2021 à 20:33
+-- Généré le : mer. 19 mai 2021 à 16:14
 -- Version du serveur :  5.7.30
 -- Version de PHP : 7.4.9
 
@@ -45,7 +45,8 @@ INSERT INTO `article` (`id`, `title`, `content`, `image`, `video`, `created_by`,
 (23, 'Air to Fakie', 'Le air-to-fakie iest un cousin du backside 180, mais avec quelques petites differences. Un des meilleurs tricks de halfpipe en snowboard', 'https://s2.qwant.com/thumbr/0x380/d/5/b254fc59ae59cb5273c933c0e4026fbbf12d672fd37aec7618ed602c75f82f/tj-schneider-air-to-fakie-main.jpg?u=https%3A%2F%2Fi1.wp.com%2Fwww.snowboarder.com%2Fwp-content%2Fuploads%2F2009%2F09%2Ftj-schneider-air-to-fakie-main.jpg', 'http://place-hold.it/350x150', 'Joris', '2021-01-09 20:17:16', 1),
 (24, 'Stalefish', 'Le noble stalefish, c’est un grab pour toutes les occasions. Les hips, le pipe, les boards de piste, les sauts de barre ou les booters, tous ces terrains te donnent l’opportunité d’envoyer le Prince de tous les grabs. Si tu le tweak bien, que tu tends le bras vers le ciel et que ta board est perpendiculaire à la réception, c’est toujours magnifique.', 'https://s2.qwant.com/thumbr/0x0/f/0/1195d850d885429fc0a7e78ecdf87959303b2672dbb67518feef5eb6326205/Featured-2.jpg?u=https%3A%2F%2Fd2hl4mfiesch9e.cloudfront.net%2Fmporade_new%2Fwp-content%2Fuploads%2F2016%2F09%2FFeatured-2.jpg&q=0&b=1&p=0&a=1', 'http://place-hold.it/350x150', 'Joris', '2021-01-17 14:59:17', 1),
 (25, 'Lipslide', 'LE rail trick de base à notre avis. Il n’y rien de plus beau qu’un lipslide avec tellement de tweak qu’il faut porter des lunettes de sécurité pour pas te décoller la rétine ! Avec ce trick, tu peux carrément te retrouver avec une de tes jambes plus haute que ta tête à certains moments', 'https://s1.qwant.com/thumbr/0x380/2/0/7d5abcdfc7af28793bf213adf4dc4a36b5e928f500f34e6df31c0d847d7805/laax-14-1024x683.jpg?u=http%3A%2F%2Fitsajudgeslife.co.uk%2Fwp-content%2Fuploads%2F2018%2F04%2Flaax-14-1024x683.jpg&q=0&b=1&p=0&a=1', 'http://place-hold.it/350x150', 'Joris', '2021-01-12 07:05:17', 2),
-(26, 'Slash', 'Le slash est un signe de ponctuation dans un run. Tu peux voir le plus beau de tous les runs, sans un slash, il manque un truc. Comme pour le spray d’un cutback en surf, c’est la hauteur de ton slahs qui fait tout.', 'https://images.fineartamerica.com/images-medium-large-5/woman-powder-snowboarding-scott-markewitz.jpg', 'http://place-hold.it/350x150', 'Joris', '2021-01-23 03:23:36', 2);
+(26, 'Slash', 'Le slash est un signe de ponctuation dans un run. Tu peux voir le plus beau de tous les runs, sans un slash, il manque un truc. Comme pour le spray d’un cutback en surf, c’est la hauteur de ton slahs qui fait tout.', 'https://images.fineartamerica.com/images-medium-large-5/woman-powder-snowboarding-scott-markewitz.jpg', 'http://place-hold.it/350x150', 'Joris', '2021-01-23 03:23:36', 2),
+(35, 'titre', 'ftcfhgcdfgnb ggvhbgfvhng', 'http://place-hold.it/350x150', 'http://place-hold.it/350x150', 'Joris', '2021-04-07 17:09:35', 2);
 
 -- --------------------------------------------------------
 
@@ -77,7 +78,6 @@ INSERT INTO `category` (`id`, `title`, `description`) VALUES
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
   `article_id` int(11) NOT NULL,
-  `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `user_id` int(11) DEFAULT NULL
@@ -87,40 +87,47 @@ CREATE TABLE `comment` (
 -- Déchargement des données de la table `comment`
 --
 
-INSERT INTO `comment` (`id`, `article_id`, `author`, `content`, `created_at`, `user_id`) VALUES
-(6, 15, 'Alexandre Turpin', 'Excellent', '2021-03-27 11:04:47', NULL),
-(7, 15, 'Olivie Delaunay', 'J\'ai fait pareil je me suis cassé une jambe', '2021-03-27 11:04:47', NULL),
-(8, 15, 'Cécile Boulay', 'Super site, ça se voit que c\'est fait par un pro', '2021-03-27 11:04:47', NULL),
-(20, 16, 'Thibault Gimenez', 'J\'aime', '2021-03-12 17:43:35', NULL),
-(21, 16, 'Lucas Dupuis', 'Cool ce trick', '2021-03-11 01:33:34', NULL),
-(26, 17, 'Pierre Potier', 'C\'est nul', '2021-03-07 08:12:17', NULL),
-(27, 17, 'Charlotte Perrier', 'J\'aime pas la neige c\'est trop froid', '2020-12-21 02:52:40', NULL),
-(28, 17, 'Amélie Pottier', 'Excellent', '2021-02-11 00:07:32', NULL),
-(39, 19, 'Thibaut Thomas', 'C\'est quoi comme planche?', '2021-02-20 13:37:50', NULL),
-(41, 19, 'Colette Ferrand', 'J\'aime', '2021-02-16 13:33:15', NULL),
-(43, 20, 'Sylvie Besnard', 'J\'ai fait pareil je me suis cassé une jambe', '2021-01-25 04:57:16', NULL),
-(45, 20, 'Alex Goncalves-Lecoq', 'Cool ce trick', '2021-02-22 01:46:38', NULL),
-(47, 20, 'Laurent Muller', 'Super site, ça se voit que c\'est fait par un pro', '2021-02-19 09:06:14', NULL),
-(55, 21, 'Christelle Rousseau', 'Cool ce trick', '2021-03-22 21:54:16', NULL),
-(56, 21, 'Arthur Bernier', 'Excellent', '2021-03-21 11:27:32', NULL),
-(64, 23, 'Édouard Blanchet', 'C\'est nul', '2021-02-17 21:46:39', NULL),
-(66, 23, 'Gérard Jacob', 'C\'est quoi comme planche?', '2021-01-28 16:11:45', NULL),
-(67, 23, 'Pénélope Dupuis', 'J\'aime pas la neige c\'est trop froid', '2021-01-22 15:08:21', NULL),
-(68, 24, 'Lucas Auger', 'J\'aime', '2021-03-15 22:13:15', NULL),
-(69, 24, 'Émilie Clerc-Leleu', 'Cool ce trick', '2021-03-10 01:28:06', NULL),
-(74, 25, 'Victoire Lesage', 'J\'aime pas la neige c\'est trop froid', '2021-02-28 20:09:20', NULL),
-(77, 25, 'Timothée Michaud', 'Excellent', '2021-02-03 07:21:29', NULL),
-(78, 25, 'Stéphane Vincent', 'J\'ai fait pareil je me suis cassé une jambe', '2021-02-25 05:22:34', NULL),
-(83, 26, 'Zacharie Carpentier', 'C\'est quoi comme planche?', '2021-02-20 15:31:44', NULL),
-(84, 26, 'Timothée de Martin', 'Super site, ça se voit que c\'est fait par un pro', '2021-03-12 20:45:11', NULL),
-(87, 15, 'rctb', 'crtf', '2021-03-30 08:30:48', NULL),
-(88, 15, 'fbgfb', 'bfgb', '2021-03-30 08:30:53', NULL),
-(89, 15, 'bhfb', 'b bgb', '2021-03-30 08:30:58', NULL),
-(90, 15, 'fnbtfh', 'btrhb', '2021-03-30 08:31:04', NULL),
-(91, 15, 'bffbgtfb', 'cfbfhg', '2021-03-30 08:31:10', NULL),
-(92, 15, 'nbtfb', 'nfcbfbg', '2021-03-30 08:31:15', NULL),
-(93, 15, 'vfyhtfy', 'tcfyhbv', '2021-03-30 08:31:20', NULL),
-(94, 15, 'ngh', 'gvnbgfnb', '2021-03-30 08:31:27', NULL);
+INSERT INTO `comment` (`id`, `article_id`, `content`, `created_at`, `user_id`) VALUES
+(6, 15, 'Excellent', '2021-03-27 11:04:47', 2),
+(7, 15, 'J\'ai fait pareil je me suis cassé une jambe', '2021-03-27 11:04:47', 2),
+(8, 15, 'Super site, ça se voit que c\'est fait par un pro', '2021-03-27 11:04:47', 2),
+(20, 16, 'J\'aime', '2021-03-12 17:43:35', 2),
+(21, 16, 'Cool ce trick', '2021-03-11 01:33:34', 2),
+(26, 17, 'C\'est nul', '2021-03-07 08:12:17', 2),
+(27, 17, 'J\'aime pas la neige c\'est trop froid', '2020-12-21 02:52:40', 2),
+(28, 17, 'Excellent', '2021-02-11 00:07:32', 2),
+(39, 19, 'C\'est quoi comme planche?', '2021-02-20 13:37:50', 2),
+(41, 19, 'J\'aime', '2021-02-16 13:33:15', 2),
+(43, 20, 'J\'ai fait pareil je me suis cassé une jambe', '2021-01-25 04:57:16', 2),
+(45, 20, 'Cool ce trick', '2021-02-22 01:46:38', 2),
+(47, 20, 'Super site, ça se voit que c\'est fait par un pro', '2021-02-19 09:06:14', 2),
+(55, 21, 'Cool ce trick', '2021-03-22 21:54:16', 2),
+(56, 21, 'Excellent', '2021-03-21 11:27:32', 2),
+(64, 23, 'C\'est nul', '2021-02-17 21:46:39', 2),
+(66, 23, 'C\'est quoi comme planche?', '2021-01-28 16:11:45', 2),
+(67, 23, 'J\'aime pas la neige c\'est trop froid', '2021-01-22 15:08:21', 2),
+(68, 24, 'J\'aime', '2021-03-15 22:13:15', 2),
+(69, 24, 'Cool ce trick', '2021-03-10 01:28:06', 2),
+(74, 25, 'J\'aime pas la neige c\'est trop froid', '2021-02-28 20:09:20', 2),
+(77, 25, 'Excellent', '2021-02-03 07:21:29', 2),
+(78, 25, 'J\'ai fait pareil je me suis cassé une jambe', '2021-02-25 05:22:34', 2),
+(83, 26, 'C\'est quoi comme planche?', '2021-02-20 15:31:44', 2),
+(84, 26, 'Super site, ça se voit que c\'est fait par un pro', '2021-03-12 20:45:11', 2),
+(87, 15, 'crtf', '2021-03-30 08:30:48', 2),
+(88, 15, 'bfgb', '2021-03-30 08:30:53', 2),
+(89, 15, 'b bgb', '2021-03-30 08:30:58', 2),
+(90, 15, 'btrhb', '2021-03-30 08:31:04', 2),
+(91, 15, 'cfbfhg', '2021-03-30 08:31:10', 2),
+(92, 15, 'nfcbfbg', '2021-03-30 08:31:15', 2),
+(93, 15, 'tcfyhbv', '2021-03-30 08:31:20', 2),
+(94, 15, 'gvnbgfnb', '2021-03-30 08:31:27', 2),
+(97, 15, 'fthtf', '2021-04-07 17:06:46', 2),
+(98, 15, 'testtesttest', '2021-04-07 17:07:09', 2),
+(100, 15, 'efvdfv', '2021-04-07 17:17:35', 2),
+(101, 15, 'tttt', '2021-04-08 15:36:32', 2),
+(102, 15, 'fsvvdsvddv', '2021-04-08 21:34:00', 2),
+(103, 15, 'ghn cgv v', '2021-04-11 15:56:21', 2),
+(104, 15, 'bonjour', '2021-05-01 15:05:10', 2);
 
 -- --------------------------------------------------------
 
@@ -145,7 +152,30 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20210327090653', '2021-03-27 09:07:41', 121),
 ('DoctrineMigrations\\Version20210327145630', '2021-03-27 14:58:49', 140),
 ('DoctrineMigrations\\Version20210330163223', '2021-03-30 16:32:42', 175),
-('DoctrineMigrations\\Version20210331155358', '2021-03-31 15:54:10', 309);
+('DoctrineMigrations\\Version20210331155358', '2021-03-31 15:54:10', 309),
+('DoctrineMigrations\\Version20210409065933', '2021-04-09 06:59:44', 108);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `photos`
+--
+
+CREATE TABLE `photos` (
+  `id` int(11) NOT NULL,
+  `article_id` int(11) DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `photos`
+--
+
+INSERT INTO `photos` (`id`, `article_id`, `url`) VALUES
+(1, 15, 'https://media.ucpa.com/image/upload/t_UCPA_Vertical/UCPA-SPORT-NATURE/France/00037016.jpg'),
+(2, 15, 'https://www.businesscoot.com/uploads/study_main_image/786.jpg'),
+(3, 15, 'https://www.madmoizelle.com/wp-content/uploads/2013/02/snowboard.jpg'),
+(4, 15, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AnI7qGQs0Ic\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>');
 
 -- --------------------------------------------------------
 
@@ -216,6 +246,13 @@ ALTER TABLE `doctrine_migration_versions`
   ADD PRIMARY KEY (`version`);
 
 --
+-- Index pour la table `photos`
+--
+ALTER TABLE `photos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_876E0D97294869C` (`article_id`);
+
+--
 -- Index pour la table `tricks`
 --
 ALTER TABLE `tricks`
@@ -235,7 +272,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT pour la table `category`
@@ -247,7 +284,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT pour la table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+
+--
+-- AUTO_INCREMENT pour la table `photos`
+--
+ALTER TABLE `photos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `tricks`
@@ -259,7 +302,7 @@ ALTER TABLE `tricks`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
@@ -277,3 +320,9 @@ ALTER TABLE `article`
 ALTER TABLE `comment`
   ADD CONSTRAINT `FK_9474526C7294869C` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`),
   ADD CONSTRAINT `FK_9474526CA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- Contraintes pour la table `photos`
+--
+ALTER TABLE `photos`
+  ADD CONSTRAINT `FK_876E0D97294869C` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`);
