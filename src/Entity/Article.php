@@ -4,11 +4,13 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use App\Repository\UserRepository;
+use App\Repository\PhotosRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -75,7 +77,26 @@ class Article
     private $url;
 
 
+    
+    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(length=128, unique=true)
+     */
 
+     /*
+    private $slug;
+
+    public function getSlug(): ?string 
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self 
+    {
+        return $this->slug;
+        return $this;
+    }
+    */
 
 
 

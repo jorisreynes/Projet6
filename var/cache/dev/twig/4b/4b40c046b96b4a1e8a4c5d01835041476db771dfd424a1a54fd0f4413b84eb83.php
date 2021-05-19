@@ -86,6 +86,20 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
 
         // line 6
         echo "
+<script> 
+        jQuery(function(){
+            \$(function () {
+                \$(window).scroll(function () { //Fonction appelée quand on descend la page
+                    if (\$(this).scrollTop() > 200 ) {  // Quand on est à 200pixels du haut de page,
+                        \$('#scrollUp').css('right','10px'); // Replace à 10pixels de la droite l'image
+                    } else { 
+                        \$('#scrollUp').removeAttr( 'style' ); // Enlève les attributs CSS affectés par javascript
+                    }
+                });
+            });
+        });
+</script>
+
 
 
 <div class=\"container-figure\">
@@ -101,74 +115,57 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
 </div>
 
 
+<div class=\"container\">
 
-<section class=\"articles\">
-  <div class=\"container\">
+  <section class=\"articles\">
+  <h2 id=\"top\">Les articles</h2>
     <div class=\"row\">
       ";
-        // line 26
+        // line 41
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 26, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 41, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 27
+            // line 42
             echo "
   
       <!--div class=\"col-lg-2\"-->
         <div class=\"col-2_4\">
-        
-
             <h2>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 33), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 46), "html", null, true);
             echo "</h2>
-            
             ";
-            // line 35
-            if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35)) {
-                // line 36
-                echo "            
-            <a href=\"";
-                // line 37
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+            // line 47
+            if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47)) {
+                // line 48
+                echo "              <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 48)]), "html", null, true);
                 echo "\"><img src=\"icone_modif_2.png\"  alt=\"\"></a>
-            <a href=\"";
-                // line 38
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+              <a href=\"";
+                // line 49
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 49)]), "html", null, true);
                 echo "\"><img src=\"icone_suppr_2.png\"  alt=\"\"></a>
-
-
             ";
             }
-            // line 42
-            echo "
-              <img src=\"";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 43), "html", null, true);
+            // line 51
+            echo "              <img src=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 51), "html", null, true);
             echo "\" alt=\"\" style=\"width:100%; height:auto\">
-
-
               <p>";
-            // line 46
-            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 46), 0, 55), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 52), 0, 55), "html", null, true);
             echo "...</p>
               <a href=\" ";
-            // line 47
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 47)]), "html", null, true);
+            // line 53
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 53)]), "html", null, true);
             echo " \" class=\"btn btn-primary\">Lire la suite</a>
               <div class=\"metadata\">Ecrit le ";
-            // line 48
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 48), "d/m/Y"), "html", null, true);
+            // line 54
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 54), "d/m/Y"), "html", null, true);
             echo " à ";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 48), "H:i"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 54), "H:i"), "html", null, true);
             echo "</div>
         </div>
-
-      
-    
-
-
-
-
 
 
       ";
@@ -176,10 +173,17 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
-        echo "    </div>
-  </div>
-</section>
+        // line 59
+        echo "
+    </div>
+
+  </section>
+
+</div>
+
+<div id=\"scrollUp\">
+<a href=\"#top\"><img src=\"to_top.png\"/></a>
+</div>
 
 ";
         
@@ -202,7 +206,7 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
 
     public function getDebugInfo()
     {
-        return array (  180 => 60,  160 => 48,  156 => 47,  152 => 46,  146 => 43,  143 => 42,  136 => 38,  132 => 37,  129 => 36,  127 => 35,  122 => 33,  114 => 27,  110 => 26,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  177 => 59,  164 => 54,  160 => 53,  156 => 52,  151 => 51,  146 => 49,  141 => 48,  139 => 47,  135 => 46,  129 => 42,  125 => 41,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -212,6 +216,20 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+
+<script> 
+        jQuery(function(){
+            \$(function () {
+                \$(window).scroll(function () { //Fonction appelée quand on descend la page
+                    if (\$(this).scrollTop() > 200 ) {  // Quand on est à 200pixels du haut de page,
+                        \$('#scrollUp').css('right','10px'); // Replace à 10pixels de la droite l'image
+                    } else { 
+                        \$('#scrollUp').removeAttr( 'style' ); // Enlève les attributs CSS affectés par javascript
+                    }
+                });
+            });
+        });
+</script>
 
 
 
@@ -228,47 +246,39 @@ class __TwigTemplate_098a87ec9d14f4b841822dbac950d0d66f1c0c653354869a2d95dcb188d
 </div>
 
 
+<div class=\"container\">
 
-<section class=\"articles\">
-  <div class=\"container\">
+  <section class=\"articles\">
+  <h2 id=\"top\">Les articles</h2>
     <div class=\"row\">
       {% for article in articles %}
 
   
       <!--div class=\"col-lg-2\"-->
         <div class=\"col-2_4\">
-        
-
             <h2>{{ article.title }}</h2>
-            
             {% if app.user %}
-            
-            <a href=\"{{ path('blog_edit', {'id': article.id}) }}\"><img src=\"icone_modif_2.png\"  alt=\"\"></a>
-            <a href=\"{{ path('blog_delete', {'id': article.id}) }}\"><img src=\"icone_suppr_2.png\"  alt=\"\"></a>
-
-
+              <a href=\"{{ path('blog_edit', {'id': article.id}) }}\"><img src=\"icone_modif_2.png\"  alt=\"\"></a>
+              <a href=\"{{ path('blog_delete', {'id': article.id}) }}\"><img src=\"icone_suppr_2.png\"  alt=\"\"></a>
             {% endif %}
-
               <img src=\"{{ article.image }}\" alt=\"\" style=\"width:100%; height:auto\">
-
-
               <p>{{ article.content |slice(0,55)}}...</p>
               <a href=\" {{ path('blog_show', {'id': article.id}) }} \" class=\"btn btn-primary\">Lire la suite</a>
               <div class=\"metadata\">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}}</div>
         </div>
 
-      
-    
-
-
-
-
-
 
       {% endfor %}
+
     </div>
-  </div>
-</section>
+
+  </section>
+
+</div>
+
+<div id=\"scrollUp\">
+<a href=\"#top\"><img src=\"to_top.png\"/></a>
+</div>
 
 {% endblock %}", "blog/index.html.twig", "/Users/joris/Desktop/Openclassroom/Projet 6/projet6/templates/blog/index.html.twig");
     }

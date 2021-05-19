@@ -4,6 +4,20 @@
 
 {% block body %}
 
+<script> 
+        jQuery(function(){
+            $(function () {
+                $(window).scroll(function () { //Fonction appelée quand on descend la page
+                    if ($(this).scrollTop() > 200 ) {  // Quand on est à 200pixels du haut de page,
+                        $('#scrollUp').css('right','10px'); // Replace à 10pixels de la droite l'image
+                    } else { 
+                        $('#scrollUp').removeAttr( 'style' ); // Enlève les attributs CSS affectés par javascript
+                    }
+                });
+            });
+        });
+</script>
+
 
 
 <div class="container-figure">
@@ -19,46 +33,38 @@
 </div>
 
 
+<div class="container">
 
-<section class="articles">
-  <div class="container">
+  <section class="articles">
+  <h2 id="top">Les articles</h2>
     <div class="row">
       {% for article in articles %}
 
   
       <!--div class="col-lg-2"-->
         <div class="col-2_4">
-        
-
             <h2>{{ article.title }}</h2>
-            
             {% if app.user %}
-            
-            <a href="{{ path('blog_edit', {'id': article.id}) }}"><img src="icone_modif_2.png"  alt=""></a>
-            <a href="{{ path('blog_delete', {'id': article.id}) }}"><img src="icone_suppr_2.png"  alt=""></a>
-
-
+              <a href="{{ path('blog_edit', {'id': article.id}) }}"><img src="icone_modif_2.png"  alt=""></a>
+              <a href="{{ path('blog_delete', {'id': article.id}) }}"><img src="icone_suppr_2.png"  alt=""></a>
             {% endif %}
-
               <img src="{{ article.image }}" alt="" style="width:100%; height:auto">
-
-
               <p>{{ article.content |slice(0,55)}}...</p>
               <a href=" {{ path('blog_show', {'id': article.id}) }} " class="btn btn-primary">Lire la suite</a>
               <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y')}} à {{ article.createdAt | date('H:i')}}</div>
         </div>
 
-      
-    
-
-
-
-
-
 
       {% endfor %}
+
     </div>
-  </div>
-</section>
+
+  </section>
+
+</div>
+
+<div id="scrollUp">
+<a href="#top"><img src="to_top.png"/></a>
+</div>
 
 {% endblock %}

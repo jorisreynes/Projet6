@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'e683a391595b3569add6037bb1c3b68376cfef36',
+    'reference' => '044ce5ac056275c8d9ecf7de4c33a11bdf343eea',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,16 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'e683a391595b3569add6037bb1c3b68376cfef36',
+      'reference' => '044ce5ac056275c8d9ecf7de4c33a11bdf343eea',
+    ),
+    'behat/transliterator' => 
+    array (
+      'pretty_version' => 'v1.3.0',
+      'version' => '1.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3c4ec1d77c3d05caa1f0bf8fb3aae4845005c7fc',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -208,6 +217,15 @@
       array (
       ),
       'reference' => '848d8125239d7dbf8ab25cb7f054f1a630e68c2e',
+    ),
+    'gedmo/doctrine-extensions' => 
+    array (
+      'pretty_version' => 'v3.0.5',
+      'version' => '3.0.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f956c3c4d0c0ffdc5dd879288073772e439b6c1a',
     ),
     'knplabs/knp-components' => 
     array (
@@ -430,6 +448,15 @@
       array (
       ),
       'reference' => '430d14c01836b77c28092883d195a43ce413ee32',
+    ),
+    'stof/doctrine-extensions-bundle' => 
+    array (
+      'pretty_version' => 'v1.6.0',
+      'version' => '1.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ef469a9d3b8be23d4c746d558742cc1b3e2588cb',
     ),
     'symfony/asset' => 
     array (
