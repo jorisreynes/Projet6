@@ -2212,3 +2212,15 @@ ecbd2d,127.0.0.1,GET,http://127.0.0.1:8000/blog/style.css,1621428131,,404
 9ad6bd,127.0.0.1,GET,http://127.0.0.1:8000/blog/%3Ciframe%20width=%22560%22%20height=%22315%22%20src=%22https://www.youtube.com/embed/AnI7qGQs0Ic%22%20title=%22YouTube%20video%20player%22%20frameborder=%220%22%20allow=%22accelerometer;%20autoplay;%20clipboard-write;%20encrypted-media;%20gyroscope;%20picture-in-picture%22%20allowfullscreen%3E%3C/iframe%3E,1621428132,f6024f,404
 f6024f,127.0.0.1,GET,http://127.0.0.1:8000/blog/%3Ciframe%20width=%22560%22%20height=%22315%22%20src=%22https://www.youtube.com/embed/AnI7qGQs0Ic%22%20title=%22YouTube%20video%20player%22%20frameborder=%220%22%20allow=%22accelerometer;%20autoplay;%20clipboard-write;%20encrypted-media;%20gyroscope;%20picture-in-picture%22%20allowfullscreen%3E%3C/iframe%3E,1621428132,,404
 517b32,127.0.0.1,GET,http://127.0.0.1:8000/,1621428176,,200
+4a0e78,127.0.0.1,GET,http://127.0.0.1:8000/,1621975325,7de063,500
+7de063,127.0.0.1,GET,http://127.0.0.1:8000/,1621975325,,500
+8fb68c,127.0.0.1,GET,http://127.0.0.1:8000/,1621975381,,200
+c85074,127.0.0.1,GET,http://127.0.0.1:8000/connexion,1621975385,,200
+457ac7,127.0.0.1,POST,http://127.0.0.1:8000/connexion,1621975387,,302
+c30d30,127.0.0.1,GET,http://127.0.0.1:8000/,1621975387,,200
+06b1e9,127.0.0.1,GET,http://127.0.0.1:8000/blog/15,1621975391,,200
+d97f8b,127.0.0.1,GET,http://127.0.0.1:8000/blog/style.css,1621975392,1c379f,404
+1c379f,127.0.0.1,GET,http://127.0.0.1:8000/blog/style.css,1621975392,,404
+c6dde6,127.0.0.1,GET,http://127.0.0.1:8000/blog/%3Ciframe%20width=%22560%22%20height=%22315%22%20src=%22https://www.youtube.com/embed/AnI7qGQs0Ic%22%20title=%22YouTube%20video%20player%22%20frameborder=%220%22%20allow=%22accelerometer;%20autoplay;%20clipboard-write;%20encrypted-media;%20gyroscope;%20picture-in-picture%22%20allowfullscreen%3E%3C/iframe%3E,1621975392,1fe358,404
+1fe358,127.0.0.1,GET,http://127.0.0.1:8000/blog/%3Ciframe%20width=%22560%22%20height=%22315%22%20src=%22https://www.youtube.com/embed/AnI7qGQs0Ic%22%20title=%22YouTube%20video%20player%22%20frameborder=%220%22%20allow=%22accelerometer;%20autoplay;%20clipboard-write;%20encrypted-media;%20gyroscope;%20picture-in-picture%22%20allowfullscreen%3E%3C/iframe%3E,1621975392,,404
+9e5912,127.0.0.1,GET,http://127.0.0.1:8000/,1621975399,,200
